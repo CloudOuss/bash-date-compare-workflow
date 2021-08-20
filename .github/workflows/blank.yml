@@ -17,10 +17,10 @@ jobs:
   # This workflow contains a single job called "build"
   compare:
     # The type of runner that the job will run on
-    outputs:
-      result:
-        description: "Random number"
-        value: ${{ steps.date-compare.outputs.result }}
+    #outputs:
+      #result:
+        #description: "Random number"
+        #value: ${{ steps.date-compare.outputs.result }}
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      inputDate:
+        description: 'input date (yyy-mm-dd)'     
+        required: true
+        default: '2010-01-01'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  compare:
+    # The type of runner that the job will run on
+    outputs:
+      result:
+        description: "Random number"
+        value: ${{ steps.date-compare.outputs.result }}
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        id: date-compare
+        shell: bash
+        run: |
+          currentDate=`date`
+          inputDate=$(date --date=${{ github.event.inputs.inputDate }} +%s)
+          [ $currentDate -gt $inputDate ]
+          echo $?
+          
+        

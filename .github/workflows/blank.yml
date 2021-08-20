@@ -28,7 +28,7 @@ jobs:
       - name: Run a multi-line script
         id: date-compare
         shell: bash  
-        run: script.sh ${{ github.event.inputs.inputDate }}
+        run: ./script.sh ${{ github.event.inputs.inputDate }}
 
           
           

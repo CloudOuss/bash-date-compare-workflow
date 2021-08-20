@@ -24,11 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - run: echo ${{ github.action_path }}
+        shell: bash
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         id: date-compare
         shell: bash  
-        run: ./script.sh ${{ github.event.inputs.inputDate }}
+        run: ${{ github.action_path }}/script.sh ${{ github.event.inputs.inputDate }}
 
           
           

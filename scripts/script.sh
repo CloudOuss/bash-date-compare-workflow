@@ -1,7 +1,7 @@
 
 
 currentDate= $(date --date=`date` +%s)
-inputDate=$(date --date=$1 +%s)
+inputDate=date +%s
 
 echo $currentDate
 echo $inputDate

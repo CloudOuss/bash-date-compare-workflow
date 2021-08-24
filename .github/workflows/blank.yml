@@ -29,7 +29,7 @@ jobs:
       - name: Run script
         id: date-compare
         shell: bash  
-        run: $GITHUB_WORKSPACE/scripts/script.sh '2020-01-01'
+        run: chmod +x $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }}
 
           
           

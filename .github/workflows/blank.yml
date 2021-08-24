@@ -31,6 +31,7 @@ jobs:
         id: date-compare
         shell: bash  
         run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }}
+      - run: echo "is the licence expired ${{ env.licenceExpired }}" # This will output 'yellow'
 
           
           

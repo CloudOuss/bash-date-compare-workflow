@@ -1,14 +1,11 @@
 
 
-currentDate= $(date --date=`date` +%s)
-inputDate=date +%s
-
-echo $currentDate
-echo $inputDate
+currentDate=date +%s
+inputDate=$(date --date=$1 +%s)
 
 if [ $inputDate -ge $currentDate ]; #put the loop where you need it
 then
- echo 'yes';
+ echo "licenceExpired=false" >> $GITHUB_ENV
  else
-  echo 'no';
+  echo "licenceExpired=true" >> $GITHUB_ENV
 fi

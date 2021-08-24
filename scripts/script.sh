@@ -6,5 +6,4 @@ inputDate=$(date --date=$1 +%s)
 echo $currentDate
 echo $inputDate
 
-[ $currentDate -gt $inputDate ]
-echo $?
+$ [[ $currentDate < $inputDate ]] && echo it works

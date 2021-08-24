@@ -29,8 +29,7 @@ jobs:
       - name: Run script
         id: date-compare
         shell: bash  
-        run: script.sh ${{ github.event.inputs.inputDate }}
-        working-directory: ./scripts
+        run: chmod +x $GITHUB_ACTION_PATH/script.sh
 
           
           

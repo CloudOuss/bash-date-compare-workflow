@@ -26,10 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
+      - run: chmod +x $GITHUB_WORKSPACE/scripts/script.sh
       - name: Run script
         id: date-compare
         shell: bash  
-        run: chmod +x $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }}
+        run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }}
 
           
           

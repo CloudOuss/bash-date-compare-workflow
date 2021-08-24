@@ -29,7 +29,7 @@ jobs:
       - name: Run script
         id: date-compare
         shell: bash  
-        run: chmod +x $GITHUB_ACTION_PATH/script.sh
+        run: chmod +x $GITHUB_ACTION_PATH/script.sh '2020-01-01'
 
           
           

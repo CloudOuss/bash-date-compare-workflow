@@ -1,7 +1,7 @@
 
 
-currentDate=$(date +"%s")
-inputDate=$(date --date=$1 +"%s")
+currentDate=$(date +'%s')
+inputDate=$(date --date=$1 +'%s')
 
 echo $curentDate
 echo $inputDate
@@ -12,6 +12,3 @@ then
 else
  echo "licenceExpired=true" >> $GITHUB_ENV
 fi
-
-res=[ $inputDate -ge $currentDate ]
-echo res

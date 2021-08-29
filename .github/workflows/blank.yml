@@ -32,9 +32,9 @@ jobs:
         shell: bash  
         run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }}
       - run: echo "only runs when licence is expired"
-        if: ${{ env.licenceExpired == true }}
+        if: ${{ env.licenceExpired == 'true' }}
       - run: echo "only runs when licence is valid"
-        if: ${{ env.licenceExpired == false }}
+        if: ${{ env.licenceExpired == 'false' }}
 
           
           

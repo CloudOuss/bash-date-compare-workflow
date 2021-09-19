@@ -2,14 +2,10 @@ currentDate=$(date +'%s')
 pendingDate=`date +'%s' -d "+$2 days"`
 inputDate=$(date --date=$1 +'%s')
 
-if [ $currentDate -ge $inputDate ];
-then
-  if [ $pendingDate -ge $inputDate ];
-  then
-    echo "licenceStatus=expired" >> $GITHUB_ENV
-  else
-    echo "licenceStatus=pending" >> $GITHUB_ENV
-  fi
+if [ $pendingDate -ge $inputDate ]; then
+  echo "licenceStatus=expired" >> $GITHUB_ENV
+elif [ $currentDate -ge $inputDate ]; then
+  echo "licenceStatus=pending" >> $GITHUB_ENV
 else
- echo "licenceStatus=valid" >> $GITHUB_ENV
+  echo "licenceStatus=valid" >> $GITHUB_ENV
 fi

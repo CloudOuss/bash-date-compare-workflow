@@ -10,7 +10,7 @@ echo $inputDateUnix
 
 if [ $inputDateUnix -gt $currentDateUnix ]; then
   echo "licenceStatus=valid" >> $GITHUB_ENV
-elif [ $currentDateUnix -ge $pendingDateUnix ]; then
+elif [ $currentDateUnix -gt $pendingDateUnix ]; then
   echo "licenceStatus=expired" >> $GITHUB_ENV
 else
   echo "licenceStatus=pending" >> $GITHUB_ENV

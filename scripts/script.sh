@@ -4,7 +4,7 @@ inputDate=$(date --date=$1 +'%s')
 
 if [ $currentDate -ge $inputDate ];
 then
-  if [ $currentDate -ge $pendingDate ];
+  if [ $pendingDate -ge $inputDate ];
   then
     echo "licenceStatus=expired" >> $GITHUB_ENV
   else

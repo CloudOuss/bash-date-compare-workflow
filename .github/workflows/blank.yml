@@ -31,6 +31,7 @@ jobs:
         id: date-compare
         shell: bash  
         run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }} 5
+      - run: echo "status is ${{ env.licenceStatus}}"
       - run: echo "only runs when licence is expired"
         if: ${{ env.licenceStatus == 'expired' }}
       - run: echo "only runs when licence is valid"

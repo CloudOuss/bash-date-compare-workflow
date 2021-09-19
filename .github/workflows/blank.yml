@@ -11,6 +11,10 @@ on:
         description: 'input date (yyy-mm-dd)'     
         required: true
         default: '2010-01-01'
+      dateOffset:
+        description: 'in days'     
+        required: true
+        default: '5'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -30,7 +34,7 @@ jobs:
       - name: Run script
         id: date-compare
         shell: bash  
-        run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }} 5
+        run: $GITHUB_WORKSPACE/scripts/script.sh ${{ github.event.inputs.inputDate }} ${{ github.event.inputs.dateOffset }}
       - run: echo "status is ${{ env.licenceStatus}}"
       - run: echo "only runs when licence is expired"
         if: ${{ env.licenceStatus == 'expired' }}

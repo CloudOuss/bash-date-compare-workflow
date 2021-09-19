@@ -1,6 +1,6 @@
 currentDate=$(date +'%s')
-pendingDate=`date +'%s' -d "+$2 days"`
 inputDate=$(date --date=$1 +'%s')
+pendingDate=`$inputDate +'%s' -d "+$2 days"`
 
 echo $currentDate
 echo $pendingDate
